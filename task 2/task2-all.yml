@@ -9,4 +9,5 @@
       name: apache2
       state: restarted
   tasks:
-  - include_tasks: "{{ ansible_os_family }}-httpd.yml"
+  - include_tasks: "{{ ansible_os_family }}-web.yml"
+  
