@@ -1,24 +1,22 @@
 - hosts: web
-  tasks:
-  - name: Install httpd
+  tasks: 
+  - name: Install httpd
     yum:
-      name: httpd
+  - name: httpd
       state: latest
   - name: Start and enable httpd 
     systemd:
-      name: httpd
+  - name: httpd
       state: started
       enabled: yes
       masked: no 
-    
-  - name: Download Templatest
+   - name: Download Templatest
     get_url:
       url: https://www.free-css.com/free-css-templates/page241/tasty
       dest: /var/www/html/
-
-  - name: unzip
+  - name: unzip
     yum:
-      name: unzip
+  - name: unzip
       state: latest
   - name: unzip file
     unarchive:
@@ -29,7 +27,7 @@
     shell: mv /var/www/html/tasty/*  /var/www/html/
     ignore_errors: yes
 
-  name: libselinux-python
+  - name: libselinux-python
       state: latest
   - name: disable selinux
     selinux:
